@@ -106,7 +106,7 @@ export class H5EventDispatcher{
     static createDomListenter(dom:any, type:string, callback:Function, options?: {passive?:boolean, once?:boolean, capture?:boolean}): Function{
         dom.addEventListener(type, callback, options);
         return function() {
-            dom.removeEventListener(type, callback, options);
+            dom && dom.removeEventListener(type, callback, options);
         };
     }
 }

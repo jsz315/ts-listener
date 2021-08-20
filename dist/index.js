@@ -79,7 +79,7 @@ var H5EventDispatcher = /** @class */ (function () {
     H5EventDispatcher.createDomListenter = function (dom, type, callback, options) {
         dom.addEventListener(type, callback, options);
         return function () {
-            dom.removeEventListener(type, callback, options);
+            dom && dom.removeEventListener(type, callback, options);
         };
     };
     return H5EventDispatcher;
